@@ -2,22 +2,17 @@
 
 <div>
 <input #input type="text" />
-<button (click)="disciplinas.add(input.value, input.value, input.value, input.value, input.value); input.value = ''">+</button>
+<button (click)="disciplinas.add(input.value); input.value = ''">+</button>
 </div><br>
 
 <table>
 <tr>
-  <th>ID</th>
-  <th>NOME</th>
-  <th>DIA DA SEMANA</th>
-  <th>HORÁRIO</th>
-  <th>EMENTA</th>
+  <th>ID | MATERIA | DIA DA SEMANA | HORÁRIO</th>
 </tr>
+
+
 <tr *ngFor="let disciplina of disciplinas.getList(); index as i">
-  <td>{{disciplina.id}}</td>
-  <td>{{disciplina.nome}}</td>
-  <td>{{disciplina.diaDaSemana}}</td>
-  <td>{{disciplina.horario}} </td>
+  <td>{{disciplina.materia}}</td>
   <td><a [routerLink]="['/lista', i]">Detalhes </a></td>
   <span (click)="disciplinas.remove(i)" style="cursor: pointer;"> 
   - 
